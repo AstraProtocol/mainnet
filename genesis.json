@@ -34,16 +34,6 @@
               {
                   "@type": "/ethermint.types.v1.EthAccount",
                   "base_account": {
-                      "address": "astra1dyvqdg0ratg96hf2vehynk3cpaeywtlraptkgv",
-                      "pub_key": null,
-                      "account_number": "0",
-                      "sequence": "0"
-                  },
-                  "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
-              },
-              {
-                  "@type": "/ethermint.types.v1.EthAccount",
-                  "base_account": {
                       "address": "astra1pggvezunygdc7m0cwfn49t6mu44x6l72c7v29l",
                       "pub_key": null,
                       "account_number": "0",
