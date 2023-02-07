@@ -30,13 +30,14 @@ install_astra() {
     fancy_echo "install astra"
     curl -OL https://github.com/AstraProtocol/astra/releases/download/v2.2.4/astra_2.2.4_Linux_amd64.tar.gz
     tar -C ./ -xvf astra_2.2.4_Linux_amd64.tar.gz
+    cp bin/astrad /usr/bin/astrad
     mv bin/astrad ./astrad
 }
 
 setup_astra() {
     ./astrad init $NODE_NAME --chain-id astra_11110-1
     cd ~/.astrad/config
-    curl https://raw.githubusercontent.com/AstraProtocol/mainnet/main/astra_11110-1/genesis.json > genesis.json
+    curl https://raw.githubusercontent.com/AstraProtocol/mainnet/main/genesis.json > genesis.json
     sed -i "s/genesisValidator/$NODE_NAME/" config.toml
     if [[ "$NODE_TYPE" == "RPC" ]];
     then
@@ -47,7 +48,7 @@ setup_astra() {
     then
         fancy_echo "download validator"
         curl https://raw.githubusercontent.com/AstraProtocol/mainnet/main/astra_11110-1/validators/app.toml  > app.toml
-        curl https://raw.githubusercontent.com/AstraProtocol/mainnet/main/astra_11110-1/validators/app.toml  > app.toml
+        curl https://raw.githubusercontent.com/AstraProtocol/mainnet/main/astra_11110-1/validators/config.toml  > config.toml
    elif [[ "$NODE_TYPE" == "API" ]];
     then
         fancy_echo "download api"
