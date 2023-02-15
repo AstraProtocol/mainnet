@@ -1,5 +1,5 @@
-NODE_NAME="GG-API"
-NODE_TYPE="API"
+NODE_NAME="my-validator"
+NODE_TYPE="VALIDATOR"
 fancy_echo() {
   local fmt="$1"; shift
 
@@ -106,6 +106,7 @@ fancy_echo "Setup service ----"
 curl -s https://raw.githubusercontent.com/AstraProtocol/docs/main/systemd/create-service.sh -o create-service.sh && curl -s https://raw.githubusercontent.com/AstraProtocol/docs/main/systemd/astrad.service.template -o astrad.service.template
 chmod +x ./create-service.sh && ./create-service.sh
 
-mv ~/setup/script /etc/systemd/system/astrad.service
+curl -s https://raw.githubusercontent.com/AstraProtocol/mainnet/main/script > /etc/systemd/system/astrad.service
 
+systemctl daemon-reload
 fancy_echo "done !!!"
