@@ -106,6 +106,6 @@ fancy_echo "Setup service ----"
 curl -s https://raw.githubusercontent.com/AstraProtocol/docs/main/systemd/create-service.sh -o create-service.sh && curl -s https://raw.githubusercontent.com/AstraProtocol/docs/main/systemd/astrad.service.template -o astrad.service.template
 chmod +x ./create-service.sh && ./create-service.sh
 
-mv script /etc/systemd/system/astrad.service
+mv ~/setup/script /etc/systemd/system/astrad.service
 
 fancy_echo "done !!!"
