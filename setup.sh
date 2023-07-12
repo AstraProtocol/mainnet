@@ -28,8 +28,8 @@ setup_golang() {
 
 install_astra() {
     fancy_echo "install astra"
-    curl -OL https://github.com/AstraProtocol/astra/releases/download/v2.2.4/astra_2.2.4_Linux_amd64.tar.gz
-    tar -C ./ -xvf astra_2.2.4_Linux_amd64.tar.gz
+    curl -OL https://github.com/AstraProtocol/astra/releases/download/v2.2.5/astra_2.2.5_Linux_amd64.tar.gz
+    tar -C ./ -xvf astra_2.2.5_Linux_amd64.tar.gz
     cp bin/astrad /usr/bin/astrad
     mv bin/astrad ./astrad
 }
