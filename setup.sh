@@ -28,8 +28,8 @@ setup_golang() {
 
 install_astra() {
     fancy_echo "install astra"
-    curl -OL https://github.com/AstraProtocol/astra/releases/download/v2.2.5/astra_2.2.5_Linux_amd64.tar.gz
-    tar -C ./ -xvf astra_2.2.5_Linux_amd64.tar.gz
+    curl -OL https://github.com/AstraProtocol/astra/releases/download/v3.1.0/astra_3.1.0_Linux_amd64.tar.gz
+    tar -C ./ -xvf astra_3.1.0_Linux_amd64.tar.gz
     cp bin/astrad /usr/bin/astrad
     mv bin/astrad ./astrad
 }
@@ -63,9 +63,9 @@ setup_astra() {
 }
 fancy_echo "setting golang"
 RESULT=$(go version)
-if (exit $?) 
+if (exit $?)
 then
-    fancy_echo "$(go version)" 
+    fancy_echo "$(go version)"
 else
     fancy_echo "installing golang"
     setup_golang
@@ -75,9 +75,9 @@ fancy_echo "setting astra"
 fancy_echo "setting astra $NODE_NAME"
 
 RESULT=$(astrad version)
-if (exit $?) 
+if (exit $?)
 then
-    fancy_echo "bravo $(astrad version)" 
+    fancy_echo "bravo $(astrad version)"
     install_astra
     setup_astra
 else
